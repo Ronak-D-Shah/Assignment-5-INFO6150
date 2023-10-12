@@ -1,0 +1,162 @@
+@import "functions";
+@import "variables";
+@import "base";
+@import "components";
+@import "layouts";
+@import "about";
+
+$n: "nav";
+$b: "background-color";
+
+body {
+  font-family: var(--font-family); 
+  #{$b}: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+#{$n} {
+  #{$b}: var(--primary-color);
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+
+  .logo {
+    font-size: 24px;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      margin-right: 20px;
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}
+
+main {
+  padding: 20px;
+  margin: 20px 100px;
+
+  .featured-dogs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+
+    .dog-card {
+      #{$b}: white;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      img {
+        max-width: 100%;
+        border-radius: 10%;
+      }
+
+      h3 {
+        font-size: 18px;
+        margin: 10px 0;
+      }
+
+      p {
+        color: #777;
+      }
+
+      .adopt-button {
+        #{$b}: lighten-color(#f39c12, 10%);
+        @extend %button-styles;
+      }
+    }
+  }
+
+  .adoption-process {
+    margin-top: 60px;
+    #{$b}: var(--primary-color);
+    color: white;
+    padding: 20px;
+    margin-bottom: 40px;
+
+    h2 {
+      font-size: 24px;
+      color: #fff;
+    }
+
+    ol {
+      list-style: decimal;
+      padding-left: 20px;
+      margin: 0;
+
+      li {
+        margin: 10px 0;
+      }
+    }
+  }
+
+  .testimonials {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    .testimonial {
+      #{$b}: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      img {
+        max-width: 100%;
+        border-radius: 50%;
+      }
+
+      p {
+        font-style: italic;
+        margin: 10px 0;
+      }
+    }
+  }
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  gap: 20px;
+  #{$b}: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 20px;
+
+  .footer-logo {
+    .logo {
+      font-size: 24px;
+    }
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    justify-content: space-between;
+
+    .footer-contact {
+      h3 {
+        font-size: 18px;
+      }
+      p {
+        margin: 5px 0;
+      }
+    }
+
+    p {
+      grid-column: 1 / -1;
+    }
+  }
+}
